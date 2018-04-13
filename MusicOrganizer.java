@@ -124,6 +124,7 @@ public class MusicOrganizer
     public void playFirst()
     {
         if(tracks.size() > 0) {
+            tracks.get(0).incrementPlayCount();
             player.startPlaying(tracks.get(0).getFilename());
         }
     }
