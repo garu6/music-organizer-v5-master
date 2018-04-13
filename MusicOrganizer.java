@@ -56,6 +56,9 @@ public class MusicOrganizer
      */
     public void playTrack(int index)
     {
+        if (playing){
+            System.out.println("hay una cancion reproduciendose pare la anterior si desea escuchar otra");
+        }else{
         if(indexValid(index)) {
             Track track = tracks.get(index);
             track.incrementPlayCount();
@@ -63,6 +66,7 @@ public class MusicOrganizer
             playing=true;
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
         }
+    }
     }
     
     /**
@@ -127,11 +131,15 @@ public class MusicOrganizer
      */
     public void playFirst()
     {
+        if (playing){
+            System.out.println("hay una cancion reproduciendose pare la anterior si desea escuchar otra");
+        }else{
         if(tracks.size() > 0) {
             tracks.get(0).incrementPlayCount();
             player.startPlaying(tracks.get(0).getFilename());
             playing=true;
         }
+    }
     }
     
     /**
