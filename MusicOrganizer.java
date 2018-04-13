@@ -246,4 +246,15 @@ public class MusicOrganizer
         
     }
     
+    public void removeByTitle (String titulo){
+        Iterator<Track> it = tracks.iterator();
+        while(it.hasNext()){
+        if (it.next().getTitle().contains(titulo)){
+            it.remove();
+        }
+            
+        }
+        
+        
+    }
 }
